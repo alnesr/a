@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<head>
+		<title>المستقبل لتقنية المعلومات</title>
+
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="Content-Language" content="ar" /
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta http-equiv="pragma" content="no-cache" />
+		<meta http-equiv="expires" content="-1" />
+		<link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+		<link href="css/bootstrap.min.css" rel="stylesheet">
+		<link href="css/style.css" rel="stylesheet">
+	</head>
+	<body>
+		$(if chap-id)
+			<form name="sendin" action="$(link-login-only)" method="post">
+				<input type="hidden" name="username" />
+				<input type="hidden" name="password" />
+				<input type="hidden" name="dst" value="$(link-orig)" />
+				<input type="hidden" name="popup" value="true" />
+			</form>
+
+			<script type="text/javascript" src="md5.js"></script>
+			<script type="text/javascript">
+			<!--
+				function doLogin() {
+				document.sendin.username.value = document.login.username.value;
+				document.sendin.password.value = hexMD5('$(chap-id)' + document.login.password.value + '$(chap-challenge)');
+				document.sendin.submit();
+				return false;
+				}
+			//-->
+			</script>
+		$(endif)
+		<div class="container">
+			<div class="row">
+				<div class="col-md-offset-2 col-md-4">
+					<div class="logo-area">
+						<div class="logo"><img src="img/logo.png" /><a href="#"> المستقبل <span> لتقنية المعلومات </span></a></div>
+						<p> <a href="https://souqsh.ga/" class="btn btn-small">المتجر</a>
+						<a href="page.html" class="btn btn-small">معلومات عنا</a>
+					</div>
+				</div>
+                <div class="col-md-4">
+                    <div class="panel-second"></div>
+                    <div class="panel">
+                        <div class="pull-right"><img src="img/icon-plus.png" /></div>
+                        <header>
+                            تسيجل الدخول
+                        </header>
+                        <form class="login" name="login" action="$(link-login-only)" method="post"
+                            $(if chap-id) onSubmit="return doLogin()" $(endif)>
+                            <input type="hidden" name="dst" value="$(link-orig)" />
+                            <input type="hidden" name="popup" value="true" />
+                            <div class="s-login">
+	                            
+	                            <p class="text-uppercase"><small><b>شكرا لستخدم خدمتنا</b> <br/>برجاء ادخال اسم المستخدم وكلمة المرور الخاص بكم <br/>
+سيتم التحويل الى المتجر اذا لم يتم إدخال البيانات خلال 40 ثانية</b>.</p>
+	                            
+	                            <hr/>
+	                             $(if error)
+                                <div class="alert alert-danger">
+                                 <script type="text/javascript">
+var error = "$(error)";
+if (error == "simultaneous session limit reached") {
+document.write("المعذرة ، هذا الحساب مستخدم حالياً في جهاز آخر . ");
+}
+else if (error == "invalid password") {
+document.write("تاكد من كتابة كلمة المرور بشكل صحيح");
+}
+else if (error == "uptime limit reached") {
+document.write("عذراً لقد انتهى الوقت المتاح لك..");
+}
+else if (error == "invalid username or password") {
+document.write("خطأ في كلمة المرور");
+}
+else if (error.search("traffic limit") != -1) {
+document.write("لقد انتهى رصيد تحميل هذا الحساب");
+}
+else if (error == "no valid profile found") {
+document.write("لقد انتهت صلاحية هذا الحساب .");
+}
+else if(error.search("uptime limit") != -1) {
+document.write("لقد انتهى رصيد هذا الحساب");	
+}
+else if(error.search("not found") != -1) {
+document.write("لقد ادخلت اسم المستخدم بطريقة غير صحيحة، الرجاء المحاولة مرة اخرى ");	
+}
+else if (error == "invalid Calling-Station-Id") {
+document.write("هذا الحساب مقترن بجهاز آخر، لمزيد من المعلومات يرجى الاتصال بخدمة العملاء");
+}
+else document.write("$(error)<br />")
+</script>
+.
+                                </div>
+                                $(endif)
+
+                                <input type="text" name="username" class="username" value="$(username)" placeholder="اسم المسخدم" />
+                                <input type="password" name="password" class="password" placeholder="كلمة المرور"/>
+
+
+                            </div>
+                            <button type="submit" class="btn-login text-space">تسجيل الدخول</button>
+
+                            $(if trial == 'yes')
+														<a href="$(link-login-only)?dst=$(link-orig-esc)&amp;username=T-$(mac-esc)" class="btn btn-logout text-space">تجربة الانترنت</a>
+                            $(endif)
+                        </form>
+                    </div>
+                </div>
+			</div>
+		</div>
+
+		<script src="js/jquery.min.js"></script>
+		<script src="js/bootstrap.min.js"></script>
+		<script type="text/javascript">
+		  	document.login.username.focus();
+		</script>
+	</body>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1256
+<div align="center">
+<div class="smallfont" align="center">
+<!-- اتقي الله لا تمسح حقوق الملكة لنك لن تدفع اي شئ مقبال مسح الحقوق -->
+<font/>جميع الحقوق محفوظة ©<a href="https://almstqbl.net"><span style="text-decoration: none"><font </a> المستقيل لخدمات التقنية</font></span></a><font </a>
+</font></font>
+<p>Powered by<font </a> <a href="https://www.facebook.com/ahmedabo3mer">
+<font </a><span style="text-decoration: none">Ahmed Amer</span></font></a></font><font color="black">
+<!-- اتقي الله لا تمسح حقوق الملكة لنك لن تدفع اي شئ مقبال مسح الحقوق --></font></p></div></div>
+<META HTTP-EQUIV="Refresh" CONTENT="40;URL=https://souqsh.ga">
+</html>

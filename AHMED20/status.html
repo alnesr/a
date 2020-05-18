@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>بيانات حساب $(username) </title>
+		<link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+		<link href="css/bootstrap.min.css" rel="stylesheet">
+		<link href="css/style.css" rel="stylesheet">
+		$(if refresh-timeout)
+		<meta http-equiv="refresh" content="$(refresh-timeout-secs)">
+		$(endif)
+		<script language="JavaScript">
+		<!--
+		$(if advert-pending == 'yes')
+		  var popup = '';
+		  function focusAdvert() {
+		  if (window.focus) popup.focus();
+		}
+		function openAdvert() {
+		  popup = open('$(link-advert)', 'hotspot_advert', '');
+		  setTimeout("focusAdvert()", 1000);
+		}
+		$(endif)
+		  function openLogout() {
+		  if (window.name != 'hotspot_status') return true;
+		  open('$(link-logout)', 'hotspot_logout', 'toolbar=0,location=0,directories=0,status=0,menubars=0,resizable=1,width=280,height=250');
+		  window.close();
+		  return false;
+		}
+		//-->
+		</script>
+   	</head>
+   	<body bottommargin="0" topmargin="0" leftmargin="0" rightmargin="0"
+   	$(if advert-pending == 'yes')
+   		onLoad="openAdvert()"
+   	$(endif)>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-offset-4 col-md-4">
+				<div class="panel-second"></div>
+				<div class="panel">
+					<form  class="login" action="$(link-logout)" name="logout" onSubmit="return openLogout()">
+						<div class="s-login">
+							<img src="img/icon-user.png" />
+							$(if login-by == 'trial')
+							<p class="user"><span class="name">مرحبا بك في الصفحة الخاصة بياناتك..!</span></p>
+							$(elif login-by != 'mac')
+							<p class="user"><span class="name">مرحبا $(username)..!</span></p>
+							$(endif)
+							<div class="status">
+								<table class="table table-condensed">
+									<tr>
+										<td width="45%">ماك ادرس</td>
+										<td width="10%">:</td>
+										<td>$(mac)</td>
+									</tr>
+									<tr>
+										<td>الابي الخاص بك</td>
+										<td>:</td>
+										<td>$(ip)</td>
+									</tr>
+									<tr>
+										<td>الابلود والدونلود</td>
+										<td>:</td>
+										<td>$(bytes-in-nice) / $(bytes-out-nice)</td>
+									</tr>
+									$(if session-time-left)
+									<tr>
+										<td>متصل من</td>
+										<td>:</td>
+										<td>$(uptime)</td>
+									</tr>
+									<tr>
+										<td>الوقت المتبقي</td>
+										<td>:</td>
+										<td>$(session-time-left)</td>
+									</tr>
+									$(else)
+									<tr>
+	
+									</tr>
+									$(else
+									<tr>
+										<td>متصل من </td>
+										<td>:</td>
+										<td>$(uptime)</td>
+									</tr>
+									$(endif)
+									$(if blocked == 'yes')
+									<tr>
+										<td>الحالة</td>
+										<td>:</td>
+										<td>Advertisement required</td>
+									</tr>
+									$(elif refresh-timeout)
+									<tr>
+									<td>باقي الكوتة</td>
+										<td>:</td>
+										<td>$(remain-bytes-total-nice)</td>	
+									</tr>
+									$(endif)
+								</table>
+
+								<!-- user manager link. if user manager resides on other router, replace $(hostname) by its address
+								<button onclick="document.location='http://$(hostname)/user?subs='; return false;">status</button> -->
+								<!-- end of user manager link -->
+							</div> 
+						</div>
+						<button type="submit" class="btn-logout text-space">تسجيل خروج</button>
+						
+					</form>
+				</div>
+			</div>
+		</div>
+		<script src="js/jquery.min.js"></script>
+		<script src="js/bootstrap.min.js"></script>
+	</body>
+<div align="center">
+<div class="smallfont" align="center">
+<!-- اتقي الله لا تمسح حقوق الملكة لنك لن تدفع اي شئ مقبال مسح الحقوق -->
+<font/>جميع الحقوق محفوظة ©<a href="https://almstqbl.net"><span style="text-decoration: none"><font </a> المستقيل لخدمات التقنية</font></span></a><font </a>
+</font></font>
+<p>Powered by<font </a> <a href="https://www.facebook.com/ahmedabo3mer">
+<font </a><span style="text-decoration: none">Ahmed Amer</span></font></a></font><font color="black">
+<!-- اتقي الله لا تمسح حقوق الملكة لنك لن تدفع اي شئ مقبال مسح الحقوق --></font></p></div></div>
+</html>
+
